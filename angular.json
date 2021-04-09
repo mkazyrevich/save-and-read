@@ -52,7 +52,7 @@
               "apps/save-read-client/src/favicon.ico",
               "apps/save-read-client/src/assets"
             ],
-            "styles": ["apps/save-read-client/src/styles.scss"],
+            "styles": ["./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css", "apps/save-read-client/src/styles.scss"],
             "scripts": []
           },
           "configurations": {

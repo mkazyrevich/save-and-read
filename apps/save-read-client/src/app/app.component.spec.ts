@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
@@ -24,8 +25,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain(
-      'Welcome to save-read-client!'
-    );
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to save-read-client!');
   });
 });
