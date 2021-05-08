@@ -1,0 +1,14 @@
+@use '~@angular/material/theming' as material;
+@use 'sass:map';
+
+@mixin mk-aside-menu($theme) {
+  $background: map.get($theme, background);
+  $background-color: material.mat-color($background);
+  .mat-sidenav-container {
+    height: 100%;
+
+    .mat-sidenav {
+      background-color: $background-color;
+    }
+  }
+}

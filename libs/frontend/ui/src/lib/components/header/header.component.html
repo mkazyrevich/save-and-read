@@ -1,0 +1,10 @@
+<mat-toolbar class="flex justify-between">
+  <div>Save&Read</div>
+  <div class="flex justify-end">
+    <mk-theme-picker
+      [theme]="theme"
+      (changeTheme)="changeTheme.emit($event)"
+    >
+    </mk-theme-picker>
+  </div>
+</mat-toolbar>

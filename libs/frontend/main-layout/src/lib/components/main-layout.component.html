@@ -1,0 +1,9 @@
+<div class="flex flex-col h-full">
+  <mk-header
+    [theme]="theme$ | async"
+    (changeTheme)="changeTheme($event)"
+  ></mk-header>
+  <mk-aside-menu>
+  </mk-aside-menu>
+  <div>footer</div>
+</div>

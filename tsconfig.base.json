@@ -20,7 +20,15 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "strict": true,
-    "paths": {}
+    "paths": {
+      "@mk/frontend/ui": ["libs/frontend/ui/src/index.ts"],
+      "@mk/frontend/bookmarks": ["libs/frontend/bookmarks/src/index.ts"],
+      "@mk/frontend/main-layout": ["libs/frontend/main-layout/src/index.ts"],
+      "@mk/shared": ["libs/shared/src/index.ts"],
+      "@mk/client": ["libs/client/src/index.ts"],
+      "@mk/frontend/clients": ["libs/frontend/clients/src/index.ts"],
+      "@mk/environments": ["apps/save-read-client/src/environments/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"],
   "angularCompilerOptions": {

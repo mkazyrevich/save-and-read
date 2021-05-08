@@ -1,0 +1,11 @@
+@use '~@angular/material/theming' as material;
+@use '../themes' as themes;
+
+$light-primary: material.mat-palette(material.$mat-gray);
+$light-accent: material.mat-palette(material.$mat-gray);
+$light-warn: material.mat-palette(material.$mat-red);
+
+$light-theme: material.mat-light-theme($light-primary, $light-accent, $light-warn);
+
+@include material.angular-material-theme($light-theme);
+@include themes.mk-themes($light-theme);

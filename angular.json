@@ -48,11 +48,21 @@
             "polyfills": "apps/save-read-client/src/polyfills.ts",
             "tsConfig": "apps/save-read-client/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/save-read-client/src/favicon.ico",
-              "apps/save-read-client/src/assets"
+            "assets": ["apps/save-read-client/src/favicon.ico", "apps/save-read-client/src/assets"],
+            "styles": [
+              "apps/save-read-client/src/styles.scss",
+              {
+                "inject": false,
+                "input": "apps/save-read-client/src/styles/themes/dark-theme.scss",
+                "bundleName": "dark-theme"
+              },
+              {
+                "inject": false,
+                "input": "apps/save-read-client/src/styles/themes/light-theme.scss",
+                "bundleName": "light-theme"
+              }
             ],
-            "styles": ["./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css", "apps/save-read-client/src/styles.scss"],
+            "extractCss": true,
             "scripts": []
           },
           "configurations": {
@@ -143,6 +153,175 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/save-read-client-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "frontend-ui": {
+      "projectType": "library",
+      "root": "libs/frontend/ui",
+      "sourceRoot": "libs/frontend/ui/src",
+      "prefix": "mk",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/frontend/ui/src/**/*.ts", "libs/frontend/ui/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/frontend/ui"],
+          "options": {
+            "jestConfig": "libs/frontend/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "frontend-bookmarks": {
+      "projectType": "library",
+      "root": "libs/frontend/bookmarks",
+      "sourceRoot": "libs/frontend/bookmarks/src",
+      "prefix": "mk",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/frontend/bookmarks/src/**/*.ts",
+              "libs/frontend/bookmarks/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/frontend/bookmarks"],
+          "options": {
+            "jestConfig": "libs/frontend/bookmarks/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "frontend-main-layout": {
+      "projectType": "library",
+      "root": "libs/frontend/main-layout",
+      "sourceRoot": "libs/frontend/main-layout/src",
+      "prefix": "mk",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/frontend/main-layout/src/**/*.ts",
+              "libs/frontend/main-layout/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/frontend/main-layout"],
+          "options": {
+            "jestConfig": "libs/frontend/main-layout/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "backend": {
+      "root": "apps/backend",
+      "sourceRoot": "apps\\backend\\src",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/backend",
+            "main": "apps/backend/src/main.ts",
+            "tsConfig": "apps/backend/tsconfig.app.json",
+            "assets": ["apps/backend/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/backend/src/environments/environment.ts",
+                  "with": "apps/backend/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "backend:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/backend/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/backend"],
+          "options": {
+            "jestConfig": "apps/backend/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared": {
+      "root": "libs/shared",
+      "sourceRoot": "libs/shared/src",
+      "projectType": "library",
+      "prefix": "@mk",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared"],
+          "options": {
+            "jestConfig": "libs/shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "frontend-clients": {
+      "projectType": "library",
+      "root": "libs/frontend/clients",
+      "sourceRoot": "libs/frontend/clients/src",
+      "prefix": "mk",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/frontend/clients/src/**/*.ts",
+              "libs/frontend/clients/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/frontend/clients"],
+          "options": {
+            "jestConfig": "libs/frontend/clients/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

@@ -1,0 +1,11 @@
+@use 'sass:map' as map;
+@use 'apps/save-read-client/src/styles/button-theme' as button;
+@use 'libs/frontend/ui/src/lib/components/aside-menu/aside-menu.component' as aside-menu;
+@use 'libs/frontend/ui/src/lib/modules/floating-dialogs/components/floating-dialog-container/floating-dialog-container.component' as floating-dialog-theme;
+
+@mixin mk-themes($theme) {
+
+  @include button.mk-button-theme($theme);
+  @include aside-menu.mk-aside-menu($theme);
+  @include floating-dialog-theme.floating-dialog-theme($theme);
+}

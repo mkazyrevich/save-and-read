@@ -1,0 +1,6 @@
+<mat-slide-toggle (change)="changeAppTheme($event)" [checked]="!isDarkThemeActive">
+  <div *ngIf="isDarkThemeActive; else lightTheme">🌙</div>
+  <ng-template #lightTheme>
+    <div>☀️</div>
+  </ng-template>
+</mat-slide-toggle>

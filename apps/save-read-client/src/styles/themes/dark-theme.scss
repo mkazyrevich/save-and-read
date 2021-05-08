@@ -1,0 +1,11 @@
+@use '~@angular/material/theming' as material;
+@use '../themes' as themes;
+
+$dark-primary: material.mat-palette(material.$mat-blue-gray);
+$dark-accent: material.mat-palette(material.$mat-blue-gray);
+$dark-warn: material.mat-palette(material.$mat-red);
+
+$dark-theme: material.mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+@include material.angular-material-theme($dark-theme);
+@include themes.mk-themes($dark-theme);

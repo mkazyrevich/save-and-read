@@ -1,0 +1,30 @@
+@use '~@angular/material/theming' as material;
+@use 'sass:map';
+
+@mixin floating-dialog-theme($theme) {
+  $background: map.get($theme, foreground);
+  $primary-color: material.mat-color(map.get($theme, primary));
+
+
+  .cdk-overlay-container {
+    background-color: map.get($background, base);
+    opacity: 0.8;
+  }
+
+  mk-floating-dialog-container {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border: 1px solid $primary-color;
+    background-color: map.get($background, elevation);
+
+    h1 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .mat-input-element {
+      color: map.get($background, base);
+    }
+  }
+}

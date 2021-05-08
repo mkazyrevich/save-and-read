@@ -1,30 +1,24 @@
 {
   "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     ".eslintrc.json": "*"
   },
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "npmScope": "mk",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
   "projects": {
-    "save-read-client": {
-      "tags": []
-    },
-    "save-read-client-e2e": {
-      "tags": [],
-      "implicitDependencies": ["save-read-client"]
-    }
+    "save-read-client": { "tags": [] },
+    "save-read-client-e2e": { "tags": [], "implicitDependencies": ["save-read-client"] },
+    "frontend-ui": { "tags": [] },
+    "frontend-bookmarks": { "tags": [] },
+    "frontend-main-layout": { "tags": [] },
+    "backend": { "tags": [] },
+    "shared": { "tags": [] },
+    "frontend-clients": { "tags": [] }
   }
 }

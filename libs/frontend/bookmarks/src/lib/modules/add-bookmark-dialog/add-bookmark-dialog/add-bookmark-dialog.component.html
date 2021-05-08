@@ -1,0 +1,24 @@
+<form [formGroup]="form" (ngSubmit)="onAddBookmark()">
+  <mk-floating-dialog>
+    <mk-floating-dialog-content class="flex flex-col">
+      <mat-form-field>
+        <mat-label>Bookmark Name</mat-label>
+        <input formControlName="bookmarkName" matInput autocomplete="off" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Bookmark URL</mat-label>
+        <input formControlName="bookmarkURL" matInput autocomplete="off" />
+      </mat-form-field>
+    </mk-floating-dialog-content>
+    <mk-floating-dialog-footer class="flex justify-end">
+      <div class="mr-8">
+        <button mat-button class="mat-raised-button" mkFloatingDialogClose type="button">
+          Close
+        </button>
+      </div>
+      <div>
+        <button mat-button class="mat-raised-button" type="submit">OK</button>
+      </div>
+    </mk-floating-dialog-footer>
+  </mk-floating-dialog>
+</form>
