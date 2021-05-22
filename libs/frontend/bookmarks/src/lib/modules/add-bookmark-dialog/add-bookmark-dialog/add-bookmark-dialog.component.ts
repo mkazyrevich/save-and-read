@@ -1,6 +1,6 @@
 import { OverlayRef } from '@angular/cdk/overlay';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 import { BookmarksService } from '../../../bookmarks.service';
 
@@ -11,8 +11,8 @@ import { BookmarksService } from '../../../bookmarks.service';
 })
 export class AddBookmarkDialogComponent {
   public readonly form = this.fb.group({
-    bookmarkName: '',
-    bookmarkURL: '',
+    bookmarkName: ['', Validators.required],
+    bookmarkURL: ['', Validators.required],
   });
 
   public constructor(
@@ -22,7 +22,7 @@ export class AddBookmarkDialogComponent {
   ) {}
 
   public onAddBookmark(): void {
-    this.bookmarks.addBookmarks(this.form.getRawValue());
+    this.bookmarks.addBookmark(this.form.getRawValue());
     this.overlayRef.dispose();
   }
 }

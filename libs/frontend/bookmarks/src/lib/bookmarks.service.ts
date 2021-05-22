@@ -19,7 +19,7 @@ export class BookmarksService {
     return this.store.dispatch(fromBookmarks.requestBookmarks());
   }
 
-  public addBookmarks(bookmark: BookmarkToAdd): void {
+  public addBookmark(bookmark: BookmarkToAdd): void {
     return this.store.dispatch(fromBookmarks.addBookmark({ bookmark }));
   }
 }
