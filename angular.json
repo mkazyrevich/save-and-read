@@ -325,6 +325,69 @@
           }
         }
       }
+    },
+    "backend-events": {
+      "root": "libs/backend/events",
+      "sourceRoot": "libs/backend/events/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/backend/events/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/backend/events"],
+          "options": {
+            "jestConfig": "libs/backend/events/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "backend-mongo": {
+      "root": "libs/backend/mongo",
+      "sourceRoot": "libs/backend/mongo/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/backend/mongo/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/backend/mongo"],
+          "options": {
+            "jestConfig": "libs/backend/mongo/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "backend-server": {
+      "root": "libs/backend/server",
+      "sourceRoot": "libs/backend/server/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/backend/server/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/backend/server"],
+          "options": {
+            "jestConfig": "libs/backend/server/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

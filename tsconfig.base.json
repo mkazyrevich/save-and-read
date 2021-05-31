@@ -27,7 +27,10 @@
       "@mk/shared": ["libs/shared/src/index.ts"],
       "@mk/client": ["libs/client/src/index.ts"],
       "@mk/frontend/clients": ["libs/frontend/clients/src/index.ts"],
-      "@mk/environments": ["apps/save-read-client/src/environments/index.ts"]
+      "@mk/environments": ["apps/save-read-client/src/environments/index.ts"],
+      "@mk/backend/events": ["libs/backend/events/src/index.ts"],
+      "@mk/backend/mongo": ["libs/backend/mongo/src/index.ts"],
+      "@mk/backend/server": ["libs/backend/server/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"],

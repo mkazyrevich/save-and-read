@@ -7,5 +7,8 @@ module.exports = {
     '<rootDir>/apps/backend',
     '<rootDir>/libs/shared',
     '<rootDir>/libs/frontend/clients',
+    '<rootDir>/libs/backend/events',
+    '<rootDir>/libs/backend/mongo',
+    '<rootDir>/libs/backend/server',
   ],
 };

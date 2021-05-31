@@ -19,6 +19,9 @@
     "frontend-main-layout": { "tags": [] },
     "backend": { "tags": [] },
     "shared": { "tags": [] },
-    "frontend-clients": { "tags": [] }
+    "frontend-clients": { "tags": [] },
+    "backend-events": { "tags": [] },
+    "backend-mongo": { "tags": [] },
+    "backend-server": { "tags": [] }
   }
 }
