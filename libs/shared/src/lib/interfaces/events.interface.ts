@@ -9,5 +9,3 @@ export interface IEvent<T extends string> {
 export type IBookmarkAddedEvent = IEvent<EventType.BookmarkAdded>;
 
 export type IServerEvents = IBookmarkAddedEvent;
-
-

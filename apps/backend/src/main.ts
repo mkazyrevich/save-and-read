@@ -17,6 +17,7 @@ app.use((req, res, next) => {
 });
 const server = new Server(app, 3000);
 const mongo = new MongoService();
+// const events = new EventsService(mongo);
 const controllers: BaseController[] = [new BookmarksController(mongo), new SettingsController(mongo)];
 
 Promise.resolve().then(() => {

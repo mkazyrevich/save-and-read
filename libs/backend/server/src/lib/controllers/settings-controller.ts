@@ -1,4 +1,4 @@
-import { ISettings } from '@mk/backend/mongo';
+import { IMongoSettings } from '@mk/backend/mongo';
 import { Nullable } from '@mk/shared';
 import { NextFunction, Request, Response } from 'express';
 import { Collection } from 'mongodb';
@@ -22,8 +22,8 @@ export class SettingsController extends BaseController {
   ];
 
   public async handleGetTheme(req: Request, res: Response, next: NextFunction): Promise<void> {
-    const collection: Collection<ISettings> = await this.mongo.getCollection('settings');
-    const settings: Nullable<ISettings> = await collection.findOne({});
+    const collection: Collection<IMongoSettings> = await this.mongo.getCollection('settings');
+    const settings: Nullable<IMongoSettings> = await collection.findOne({});
     res.send({theme: settings?.theme ?? ''});
   }
 

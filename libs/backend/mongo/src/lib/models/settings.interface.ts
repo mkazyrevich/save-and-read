@@ -1,9 +1,9 @@
 import { ThemeType, Nullable } from '@mk/shared';
 
-export interface ISettings {
+export interface IMongoSettings {
   theme: Nullable<ThemeType>;
 }
 
-export const initialSettings: ISettings = {
+export const initialSettings: IMongoSettings = {
   theme: null,
 };
