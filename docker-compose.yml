@@ -1,0 +1,30 @@
+version: 'Compose specification'
+services:
+  frontend:
+    container_name: save-read-web
+    image: save-read-web-image
+    build:
+      dockerfile: docker/frontend/Dockerfile
+      depends_on:
+        - server
+    ports:
+    - 80:80
+  backend:
+    container_name: save-read-server
+    image: save-read-server-image
+    build:
+      dockerfile: docker/backend/Dockerfile
+      depends_on:
+        - mongo
+    ports:
+    - 3000:3000
+  mongo:
+    image: mongo
+    ports:
+    - 27017:27017
+    volumes:
+      - mongoDB:/db
+    restart: always
+
+volumes:
+  mongoDB:
