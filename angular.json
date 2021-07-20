@@ -231,7 +231,7 @@
     },
     "backend": {
       "root": "apps/backend",
-      "sourceRoot": "apps\\backend\\src",
+      "sourceRoot": "apps/backend/src",
       "projectType": "application",
       "architect": {
         "build": {

@@ -1,5 +1,7 @@
-import { Nullable } from '@mk/shared';
+import { environment, Nullable } from '@mk/shared';
 import { Collection, MongoClient, MongoClientOptions } from 'mongodb';
+
+const MONGO_URL: string = environment.mongoURL || '';
 
 export class MongoService {
   private readonly options: MongoClientOptions;
@@ -29,7 +31,7 @@ export class MongoService {
         if (!this.connecting) {
           // try to connect to database
           this.connecting = new MongoClient(
-            'mongodb://localhost:27017/SaveAndRead/',
+            MONGO_URL,
             this.options,
           ).connect();
           console.log('Connected to MongoDB successfully :)');
