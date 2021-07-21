@@ -25,8 +25,8 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - mongoDB:/db
+      - mongo-SaveAndRead:/data/db
     restart: always
 
 volumes:
-  mongoDB:
+  mongo-SaveAndRead:
