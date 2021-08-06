@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   serverUrl: 'http://localhost:3000',
-  mongoURL: 'mongodb://mongo:27017/SaveAndRead',
+  mongoURL: 'mongodb://localhost:27017/SaveAndRead',
 };
 
 /*
