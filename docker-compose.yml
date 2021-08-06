@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  frontend:
+    container_name: save-read-web
+    image: save-read-web-image
+    build:
+      context: .
+      dockerfile: docker/frontend/Dockerfile
+    depends_on:
+      - backend
+    ports:
+      - 80:80
+  backend:
+    container_name: save-read-server
+    image: save-read-server-image
+    build:
+      context: .
+      dockerfile: docker/backend/Dockerfile
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo-SaveAndRead:/data/db
+    restart: always
+
+volumes:
+  mongo-SaveAndRead:

@@ -8,7 +8,7 @@
     "nx": "nx",
     "f": "nx serve save-read-client",
     "b": "ng serve backend",
-    "build": "ng build",
+    "build": "ng build --configuration=production",
     "test": "nx test --clearCache && nx run-many --all --target=test --ci --skip-nx-cache --colors",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",

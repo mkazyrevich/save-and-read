@@ -69,8 +69,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/save-read-client/src/environments/environment.ts",
-                  "with": "apps/save-read-client/src/environments/environment.prod.ts"
+                  "replace": "libs/shared/src/lib/environment/environment.ts",
+                  "with": "libs/shared/src/lib/environment/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -231,7 +231,7 @@
     },
     "backend": {
       "root": "apps/backend",
-      "sourceRoot": "apps\\backend\\src",
+      "sourceRoot": "apps/backend/src",
       "projectType": "application",
       "architect": {
         "build": {
